@@ -16,19 +16,22 @@ class TestOne(BaseClass):
         # checkOutPage.getcardtitle()
         # checkOutPage.getCardFooter()
 
+
         # self.driver.find_element(By.LINK_TEXT, "Shop").click()
         # list = self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
         list=checkOutPage.getcardtitle()
-        i=-1
-        for card in list:
-            i=i+1
-            cardtext=card.text
-            print(cardtext)
-            if cardtext == "Blackberry":
-                checkOutPage.getCardFooter().click()
-        # for ele in list:
-        #     # product = (ele.text)
-        #     product=ele.find_element(By.XPATH, "div/h4/a").text
-        #     print(product)
-        #     if product == "Blackberry":
-        #         ele.find_element(By.XPATH,"div/button").click()
+        # i=-1
+        # for card in list:
+        #     i=i+1
+        #     cardtext=card.text
+        #     print(cardtext)
+        #     if cardtext == "Blackberry":
+        #         checkOutPage.getCardFooter().click()
+        for ele in list:
+            # product = (ele.text)
+            product=ele.find_element(By.XPATH, "div/h4/a").text
+            print(product)
+            if product == "Blackberry":
+                ele.find_element(By.XPATH,"div/button").click()
+
+        checkOutPage.clickoncheckout().click()
